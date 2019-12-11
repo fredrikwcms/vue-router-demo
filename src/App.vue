@@ -1,18 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <header id="app">
+    <!-- the router outlet, where all matched components would ber viewed -->
+    <div>
+      <b-nav>
+        <b-nav-item v-bind:to="'/'">Home</b-nav-item>
+        <b-nav-item v-bind:to="'/contact-us'">Contact Us</b-nav-item>
+      </b-nav>
+
+      <HelloWorld message="Hello World"/>
+    </div>
+    <!-- <router-link v-bind:to="'/'">Home</router-link><br>
+    <router-link v-bind:to="'/contact-us'">Contact us</router-link> -->
+
+    <router-view></router-view>
+  </header>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'app'
 }
 </script>
 
